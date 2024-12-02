@@ -50,6 +50,11 @@ docker run -d --name pgtest -p 5432:5432 -e POSTGRES_PASSWORD=admin123 pgvector/
 liquibase update
 ```
 
+- Output
+
+![Output](https://github.com/user-attachments/assets/610d3af9-731c-4313-868f-14a1b80a4287)
+
+
 ## Arch Diagram
 
 ![liquibase-arch](https://github.com/user-attachments/assets/c0c60d80-262d-4d01-be20-61080d112550)
