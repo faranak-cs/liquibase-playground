@@ -33,5 +33,9 @@ liquibase update
 - Create new Liquibase project files
 
 ```
-liquibae init project
+liquibase init project
 ```
+
+## Useful Links
+
+- https://docs.liquibase.com/commands/init/project.html
