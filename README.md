@@ -1,6 +1,6 @@
-# Liquibase Intregation
+# Liquibase Integration
 
-Liquibase playground
+Liquibase database migration guide
 
 ## Getting Started
 
@@ -61,8 +61,14 @@ liquibase update
   - `db.changelog.xml` as main liquibase file
   - `db.changelog-0.0.1.xml` being referenced in `db.changelog.xml`
   - `/sql/db.schema_v1.sql` being referenced in `db.changelog-0.0.1.xml`
+- Run the following command:
+
+```
+mvn liquibase:update
+```
 
 ## Arch Diagram
+### SQL -> ChangeSet -> ChangeLog -> Liquibase -> Database:
 
 ![liquibase-arch](https://github.com/user-attachments/assets/c0c60d80-262d-4d01-be20-61080d112550)
 
