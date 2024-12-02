@@ -1,4 +1,4 @@
-# liquibase-playground
+# Liquibase Intregation
 
 Liquibase playground
 
@@ -30,7 +30,7 @@ Go to `/examples/sql` directory first and run following command:
 liquibase update
 ```
 
-## How to run
+## Local setup
 
 - Create new Liquibase project files
 
@@ -54,6 +54,13 @@ liquibase update
 
 ![Output](https://github.com/user-attachments/assets/610d3af9-731c-4313-868f-14a1b80a4287)
 
+## Maven setup
+- Add dependencies in `pom.xml`
+- Set `liquibase.properties`
+- Add following files under `/src/main/resources`
+  - `db.changelog.xml` as main liquibase file
+  - `db.changelog-0.0.1.xml` being referenced in `db.changelog.xml`
+  - `/sql/db.schema_v1.sql` being referenced in `db.changelog-0.0.1.xml`
 
 ## Arch Diagram
 
