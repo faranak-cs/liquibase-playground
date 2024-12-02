@@ -36,6 +36,9 @@ liquibase update
 liquibase init project
 ```
 
+## Arch Diagram
+![liquibase-arch](https://github.com/user-attachments/assets/c0c60d80-262d-4d01-be20-61080d112550)
+
 ## Useful Links
 
 - https://docs.liquibase.com/commands/init/project.html
