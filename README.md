@@ -55,20 +55,38 @@ liquibase update
 ![Output](https://github.com/user-attachments/assets/610d3af9-731c-4313-868f-14a1b80a4287)
 
 ## Maven setup
-- Add dependencies in `pom.xml`
-- Set `liquibase.properties`
-- Add following files under `/src/main/resources`
-  - `db.changelog.xml` as main liquibase file
-  - `db.changelog-0.0.1.xml` being referenced in `db.changelog.xml`
-  - `/sql/db.schema_v1.sql` being referenced in `db.changelog-0.0.1.xml`
-- Run the following command:
+- Add dependencies in `pom.xml`:
 
 ```
-mvn liquibase:update
+<properties>
+  <java.version>21</java.version>
+  <spring.ai>1.0.0-SNAPSHOT</spring.ai>
+  <liquibase.version>4.27.0</liquibase.version>
+</properties>
+
+<dependency>
+  <groupId>org.liquibase</groupId>
+  <artifactId>liquibase-core</artifactId>
+  <version>${liquibase.version}</version>
+</dependency>
 ```
+
+- Set liquibase properties in `application.yml`:
+```
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+```
+
+- Add following files under `/src/main/resources/`
+  - `db.changelog-master.xml` as main liquibase file
+  - `db.changelog-0.0.1.xml` being referenced in `db.changelog.xml`
+  - `/sql/01-create-products-schema.sql` being referenced in `db.changelog-0.0.1.xml`
+
+- Run the Application
 
 ## Arch Diagram
-### SQL -> ChangeSet -> ChangeLog -> Liquibase -> Database:
+> SQL -> ChangeSet -> ChangeLog -> Liquibase -> Database:
 
 ![liquibase-arch](https://github.com/user-attachments/assets/c0c60d80-262d-4d01-be20-61080d112550)
 
