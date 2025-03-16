@@ -85,6 +85,21 @@ spring:
 
 - Run the Application
 
+## Load Data from CSV
+```
+<changeSet author="faran" id="loadDataFromCsv">
+  <loadUpdateData catalogName="<database>"
+                  encoding="UTF-8"
+                  file="<file.csv>"
+                  primaryKey="<>"
+                  quotchar='"'
+                  relativeToChangelogFile="true"
+                  schemaName="public"
+                  tableName="<>">
+  </loadUpdateData>
+</changeSet>
+```
+
 ## Arch Diagram
 > SQL -> ChangeSet -> ChangeLog -> Liquibase -> Database:
 
